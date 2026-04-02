@@ -1,0 +1,12 @@
+// 변수 테스트
+$bg-color: #f0f8ff;
+$point-color: #42b983;
+
+body {
+	background-color: $bg-color;
+	h1 {
+		color: $point-color;
+		text-align: center;
+		border-bottom: 2px solid $point-color;
+	}
+}
