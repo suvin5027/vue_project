@@ -1,10 +1,182 @@
+@charset "UTF-8";
+/* [Style Entry Point] 모든 SCSS 파일을 하나로 모으는 곳 */
+/* 직접적인 스타일 선언은 지양하고 use만 관리! */
+/* http://meyerweb.com/eric/tools/css/reset/
+	v2.0 | 20110126
+	License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
 body {
-  background-color: #f0f8ff;
+  line-height: 1;
 }
-body h1 {
-  color: #42b983;
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/**
+ * [SCSS Variables] SCSS 변수
+ * - 프로젝트 전반에서 사용할 색상, 폰트, 간격 등의 변수를 정의합니다.
+ * - 라이트 모드와 다크 모드에 따른 색상도 함께 관리합니다.
+ */
+/* default : [Light Mode] */
+:root {
+  /* [Font Family] */
+  --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  /* [Main Colors] */
+  --color-main: #1E4BB5;
+  --color-sub: #00264B;
+  /* [Interaction] */
+  --color-hover: var(--color-sub);
+  /* [Colors] */
+  --bg-page: #F3F4F6;
+  --bg-card: #FFFFFF;
+  --text-main: #111827;
+}
+
+/* [Dark Mode] */
+[data-theme=dark] {
+  --bg-page: #020617;
+  --bg-card: #0F172A;
+  --text-main: #F8FAFC;
+}
+
+/**
+ * [Common Styles] 공통 스타일
+ * - 전체 앱에서 공통적으로 적용할 스타일을 정의합니다.
+ * - 예: 폰트, 배경색, 텍스트 색상 등
+ */
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-page);
+  color: var(--text-main);
+}
+
+#app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  padding: 50px;
   text-align: center;
-  border-bottom: 2px solid #42b983;
+  min-height: 60vh;
 }
+
+/**
+ * [Layout Styles] 레이아웃 관련 스타일
+ * - 전체적인 페이지 레이아웃과 공통 요소들의 스타일을 정의합니다.
+ */
+/**
+ * [Header Styles] 헤더 관련 스타일
+ * - 사이트의 헤더 영역에 적용되는 스타일을 정의합니다.
+ * - 예: 로고, 네비게이션 메뉴, 검색 바 등
+ */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+.header ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+/**
+ * [Footer Styles] 푸터 관련 스타일
+ * - 사이트의 푸터 영역에 적용되는 스타일을 정의합니다.
+ * - 예: 저작권 정보, 링크, 연락처 등
+ */
+/**
+ * [Component Styles] 컴포넌트 관련 스타일
+ * - 다양한 컴포넌트들의 스타일을 정의합니다.
+ */
+/**
+ * [Table Styles] 테이블 관련 스타일
+ * - 기본 테이블, 스트라이프, 호버 효과 정의
+ */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--bg-card);
+  color: #333;
+}
+.table th {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+  font-weight: 600;
+}
+.table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #ccc;
+}
+.table tr:hover {
+  background-color: #f1f5f9;
+  cursor: pointer;
+}
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/**
+ * [Footer Styles] 푸터 관련 스타일
+ * - 사이트의 푸터 영역에 적용되는 스타일을 정의합니다.
+ * - 예: 저작권 정보, 링크, 연락처 등
+ */
+/**
+ * [Board Styles] 보드 관련 스타일
+ * - 보드 컴포넌트의 기본 스타일과 다양한 변형 스타일을 정의합니다.
+ */
+/**
+ * [Gantt Styles] 간트 차트 관련 스타일
+ * - 간트 차트의 기본 스타일과 다양한 변형 스타일을 정의합니다.
+ */
 
 /*# sourceMappingURL=main.css.map */

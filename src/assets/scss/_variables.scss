@@ -1,0 +1,45 @@
+/**
+ * [SCSS Variables] SCSS 변수
+ * - 프로젝트 전반에서 사용할 색상, 폰트, 간격 등의 변수를 정의합니다.
+ * - 라이트 모드와 다크 모드에 따른 색상도 함께 관리합니다.
+ */
+
+// [SCSS Variables] 공통 색상 변수
+$color-main: #1E4BB5; // 밝고 신뢰감 있는 블루
+$color-sub: #00264B; // 딥 네이비 (보조색)
+$point-color: #42b983; // 포인트 그린
+
+// [Light Mode Colors] 라이트 모드 색상
+$light-bg-page: #F3F4F6;
+$light-bg-card: #FFFFFF;
+$light-text: #111827;
+
+// [Dark Mode Colors] 다크 모드 색상
+$dark-bg-page: #020617;
+$dark-bg-card: #0F172A;
+$dark-text: #F8FAFC;
+
+/* default : [Light Mode] */
+:root {
+	/* [Font Family] */
+	--font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+
+	/* [Main Colors] */
+	--color-main: #{$color-main};
+	--color-sub: #{$color-sub};
+
+	/* [Interaction] */
+	--color-hover: var(--color-sub); // 마우스 오버 시 보조색 적용
+
+	/* [Colors] */
+	--bg-page: #{$light-bg-page};
+	--bg-card: #{$light-bg-card};
+	--text-main: #{$light-text};
+}
+
+/* [Dark Mode] */
+[data-theme='dark'] {
+	--bg-page: #{$dark-bg-page};
+	--bg-card: #{$dark-bg-card};
+	--text-main: #{$dark-text};
+}

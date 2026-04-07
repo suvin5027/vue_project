@@ -1,0 +1,21 @@
+/**
+ * [Header Styles] 헤더 관련 스타일
+ * - 사이트의 헤더 영역에 적용되는 스타일을 정의합니다.
+ * - 예: 로고, 네비게이션 메뉴, 검색 바 등
+ */
+
+@use 'variables' as *;
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 2rem;
+	background: #fff;
+	border-bottom: 1px solid #eee;
+	ul {
+		display: flex;
+		gap: 20px;
+		list-style: none;
+	}
+}

@@ -7,8 +7,8 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue' // 1. 마운트될 때 실행하려고 가져옴!
-import axios from 'axios'        // 2. 통신 도구 가져옴!
+import { onMounted } from 'vue'	// 1. 마운트될 때 실행하려고 가져옴!
+import axios from 'axios'				// 2. 통신 도구 가져옴!
 
 // 만든 컴포넌트들을 가져오는 거야!
 import TheHeader from './components/TheHeader.vue'
@@ -27,12 +27,3 @@ onMounted(() => {
 			});
 })
 </script>
-
-<style lang="scss">
-/* 전역 스타일이나 레이아웃 설정 */
-#app-wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
-}
-</style>

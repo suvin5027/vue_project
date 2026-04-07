@@ -1,0 +1,28 @@
+/**
+ * [Common Styles] 공통 스타일
+ * - 전체 앱에서 공통적으로 적용할 스타일을 정의합니다.
+ * - 예: 폰트, 배경색, 텍스트 색상 등
+ */
+
+@use 'variables' as *; // 변수 바로 쓸 수 있게 as * 사용
+
+// 공통적으로 적용할 스타일이나 레이아웃 설정
+body {
+	font-family: var(--font-main);
+	background-color: var(--bg-page);
+	color: var(--text-main);
+}
+
+// 전체 앱을 감싸는 래퍼 스타일
+#app-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+// 메인 콘텐츠 영역 스타일
+.main-content {
+	padding: 50px;
+	text-align: center;
+	min-height: 60vh;
+}
